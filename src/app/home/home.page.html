@@ -13,5 +13,16 @@
     </ion-toolbar>
   </ion-header>
 
+  <!-- Dropdown untuk memilih basemap -->
+  <ion-item>
+    <ion-label>Basemap</ion-label>
+    <ion-select [(ngModel)]="selectedBasemap" (ionChange)="changeBasemap()">
+      <ion-select-option *ngFor="let basemap of basemaps" [value]="basemap.value">
+        {{ basemap.label }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Container untuk peta -->
   <div id="container"></div>
 </ion-content>
