@@ -19,7 +19,7 @@ export class HomePage implements OnInit {
   basemaps: any[] = [
     { value: 'topo-vector', label: 'Topographic' },
     { value: 'streets', label: 'Streets' },
-    { value: 'satellite', label: 'Satellite' },
+    { value: 'dark-gray', label: 'Dark Gray' }
   ];
 
   constructor() { }
@@ -42,7 +42,7 @@ export class HomePage implements OnInit {
 
     // Update lokasi pengguna secara periodik
     await this.updateUserLocationOnMap();
-    setInterval(this.updateUserLocationOnMap.bind(this), 10000);
+    setInterval(this.updateUserLocationOnMap.bind(this), 1000000);
 
     // Tambahkan marker cuaca
     this.addWeatherMarker();
@@ -69,7 +69,7 @@ export class HomePage implements OnInit {
       // Buat marker pengguna jika belum ada
       this.userLocationGraphic = new Graphic({
         symbol: new SimpleMarkerSymbol({
-          color: 'red',
+          color: 'orange',
           size: '10px',
           outline: {
             color: 'white',
@@ -99,7 +99,7 @@ export class HomePage implements OnInit {
     let weatherMarker = new Graphic({
       geometry: weatherPoint,
       symbol: new SimpleMarkerSymbol({
-        color: 'blue',
+        color: 'yellow',
         size: '25px',
         outline: {
           color: 'white',
