@@ -69,7 +69,7 @@ export class HomePage implements OnInit {
       // Buat marker pengguna jika belum ada
       this.userLocationGraphic = new Graphic({
         symbol: new SimpleMarkerSymbol({
-          color: 'orange',
+          color: 'red',
           size: '10px',
           outline: {
             color: 'white',
@@ -99,7 +99,7 @@ export class HomePage implements OnInit {
     let weatherMarker = new Graphic({
       geometry: weatherPoint,
       symbol: new SimpleMarkerSymbol({
-        color: 'yellow',
+        color: 'blue',
         size: '25px',
         outline: {
           color: 'white',
